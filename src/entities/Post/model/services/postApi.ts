@@ -3,7 +3,7 @@ import { rtkApi } from "@/shared/api/rtkApi.ts";
 const postApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     getPostList: build.query({
-      query: ({ limit = 7 }) => ({
+      query: ({ limit = 6 }) => ({
         url: "/posts",
         method: "Get",
         params: {

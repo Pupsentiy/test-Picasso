@@ -1,0 +1,12 @@
+.PostCard{
+  box-shadow: 0 2px 20px 0 rgba(0,0,0,0.2);
+  background-color:#fff ;
+  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 3px;
+  width: 80%;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
