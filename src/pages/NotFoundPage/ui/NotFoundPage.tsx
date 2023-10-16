@@ -1,6 +1,6 @@
-import { cls } from "@/shared/lib";
 import { Text } from "@/shared/ui/Text";
 import styles from "./NotFoundPage.module.scss";
+import { cls } from "@/shared/lib/cls/cls";
 
 interface NotFoundPageProps {
   className?: string;
