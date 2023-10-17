@@ -1,20 +1,21 @@
-import { Post } from "@/entities/Post";
 import { cls } from "@/shared/lib/cls/cls.ts";
 import { memo } from "react";
+import { useSelector } from "react-redux";
 import { PostListItem } from "../PostListItem/PostListItem.tsx";
-import { usePostsList } from "../../model/services/postApi.ts";
 import styles from "./PostList.module.scss";
+import { Post } from "../../model/types/post.ts";
+import { getPost } from "../../model/selector/getPost.ts";
 interface PostListProps {
   className?: string;
 }
 
 export const PostList = memo(({ className }: PostListProps) => {
-  const { data } = usePostsList(7);
-  console.log(data);
+  const post = useSelector(getPost);
+
   return (
     <div className={cls([styles.PostList, className])}>
-      {Boolean(data) &&
-        data.map((post: Post) => <PostListItem key={post.id} post={post} />)}
+      {Boolean(post) &&
+        post?.map((post: Post) => <PostListItem key={post.id} post={post} />)}
     </div>
   );
 });

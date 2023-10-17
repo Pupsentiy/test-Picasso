@@ -1,3 +1,3 @@
 import { PostDetailsPageAsync } from "./ui/PostDetailsPage.async.tsx";
 
-export { PostDetailsPageAsync as PostDetails };
+export { PostDetailsPageAsync as PostDetailsPage };

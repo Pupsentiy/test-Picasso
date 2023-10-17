@@ -4,3 +4,8 @@ export interface Post {
   title: string;
   userId: number;
 }
+
+export interface PostSchema {
+  post: Post[];
+  page: number;
+}

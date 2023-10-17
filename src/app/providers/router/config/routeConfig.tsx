@@ -1,6 +1,6 @@
 import { MainPage } from "@/pages/MainPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
-import { PostDetails } from "@/pages/PostDetailsPage";
+import { PostDetailsPage } from "@/pages/PostDetailsPage";
 import {
   AppRoutes,
   getRouteMain,
@@ -14,8 +14,8 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     element: <MainPage />,
   },
   [AppRoutes.POST_DETAILS]: {
-    path: getRoutePostDetails("id"),
-    element: <PostDetails />,
+    path: getRoutePostDetails(":id"),
+    element: <PostDetailsPage />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: "*",

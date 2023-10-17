@@ -5,9 +5,4 @@ export enum AppRoutes {
 }
 
 export const getRouteMain = () => "/";
-export const getRoutePostDetails = (id: string) => `/post/${id}`;
-
-export const AppRouteByPathPattern: Record<string, AppRoutes> = {
-  [getRouteMain()]: AppRoutes.MAIN,
-  [getRoutePostDetails(":id")]: AppRoutes.POST_DETAILS,
-};
+export const getRoutePostDetails = (id: string) => `/posts/${id}`;
