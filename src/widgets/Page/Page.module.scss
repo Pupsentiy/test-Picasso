@@ -1,11 +1,6 @@
 .Page {
   flex-grow: 1;
-  padding: 20px;
-  height: calc(100vh);
-  overflow-y: auto;
+  height: 100vh;
+  overflow:hidden;
   flex-shrink: 100;
-  .trigger{
-    height: 20px;
-    margin: 10px;
-  }
 }

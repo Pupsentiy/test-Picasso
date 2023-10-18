@@ -9,7 +9,7 @@ export interface GetPostListArg {
 const postApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     getPostList: build.query<Post[], GetPostListArg>({
-      query: ({ limit, page = 1 }) => ({
+      query: ({ limit = 5, page = 1 }) => ({
         url: "/posts",
         method: "GET",
         params: {

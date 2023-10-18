@@ -1,8 +1,9 @@
 import { PostSchema } from "../types/post.ts";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: PostSchema = {
   page: 1,
+  scrollTo: 1,
 };
 
 export const postSlice = createSlice({
@@ -11,6 +12,9 @@ export const postSlice = createSlice({
   reducers: {
     setPage: (state) => {
       state.page += 1;
+    },
+    setScrollTo: (state, action: PayloadAction<number>) => {
+      state.scrollTo = action.payload;
     },
   },
 });

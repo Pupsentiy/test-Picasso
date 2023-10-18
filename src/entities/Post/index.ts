@@ -1,5 +1,5 @@
-export { getPost } from "./model/selector/getPost.ts";
-export { getPostPage } from "./model/selector/getPostPage.ts";
+export { getScrollTo } from "@/entities/Post/model/selectors/getScrollTo.ts";
+export { getPostPage } from "./model/selectors/getPostPage.ts";
 
 export { postActions, postReducer } from "./model/slice/postSlice.ts";
 

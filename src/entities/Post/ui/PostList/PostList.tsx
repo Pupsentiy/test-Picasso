@@ -1,30 +1,43 @@
-import { getPostPage, useGetPostListQuery } from "@/entities/Post";
+import {
+  getPostPage,
+  getScrollTo,
+  postActions,
+  useGetPostListQuery,
+} from "@/entities/Post";
 import { cls } from "@/shared/lib/cls/cls.ts";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton.tsx";
+import { useAppDispatch } from "@/shared/lib/hooks";
 import { memo } from "react";
 import { useSelector } from "react-redux";
+import { Virtuoso } from "react-virtuoso";
 import { PostListItem } from "../PostListItem/PostListItem.tsx";
 import styles from "./PostList.module.scss";
-import { Post } from "../../model/types/post.ts";
 interface PostListProps {
   className?: string;
 }
-
 export const PostList = memo(({ className }: PostListProps) => {
+  const dispatch = useAppDispatch();
   const page = useSelector(getPostPage);
-  const { data, isFetching } = useGetPostListQuery({
+  const scrollTo = useSelector(getScrollTo);
+  const { data } = useGetPostListQuery({
     limit: 5,
-    page: page,
+    page,
   });
+  const onLoadNextPart = () => {
+    dispatch(postActions.setPage());
+  };
 
   return (
-    <div className={cls([styles.PostList, className])}>
-      {Boolean(data) &&
-        data?.map((post: Post) => <PostListItem key={post.id} post={post} />)}
-      {isFetching &&
-        [...new Array(5)].map((_, index) => (
-          <Skeleton key={index} height={240} />
-        ))}
-    </div>
+    <Virtuoso
+      data={data}
+      endReached={onLoadNextPart}
+      initialTopMostItemIndex={scrollTo - 1}
+      itemContent={(_, data) => {
+        return (
+          <div className={cls([styles.PostList, className])}>
+            <PostListItem post={data} />
+          </div>
+        );
+      }}
+    />
   );
 });
