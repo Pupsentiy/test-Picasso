@@ -62,9 +62,6 @@ select {
 button,
 input[type="submit"] {
   display: inline-block;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  background-color: transparent;
 }
 
 button::-moz-focus-inner {

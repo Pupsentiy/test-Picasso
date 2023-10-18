@@ -7,6 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   children?: ReactNode;
 }
+
 export const Button = memo((props: ButtonProps) => {
   const { className, children, disabled, ...otherProps } = props;
 

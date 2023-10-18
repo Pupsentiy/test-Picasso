@@ -9,4 +9,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .viewing{
+    padding: 5px;
+    font-size: 14px;
+    background-color: #cfec7b;
+    border-radius: 3px;
+    &:hover{
+      background-color: #a2b960;
+    }
+  }
 }

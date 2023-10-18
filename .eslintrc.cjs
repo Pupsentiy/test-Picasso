@@ -23,6 +23,7 @@ module.exports = {
         ignoreComments: true,
       },
     ],
+    "@typescript-eslint/no-explicit-any": "warn"
 
   },
 }

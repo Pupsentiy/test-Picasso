@@ -1,14 +1,11 @@
 .Page {
   flex-grow: 1;
   padding: 20px;
-  height: 100vh;
+  height: calc(100vh);
   overflow-y: auto;
   flex-shrink: 100;
-
-  //-webkit-box-flex: 1;
-  //-ms-flex-positive: 1;
-  //flex-grow: 1;
-  //padding: 20px;
-  //overflow-y: auto;
-  //width: 100%;
+  .trigger{
+    height: 20px;
+    margin: 10px;
+  }
 }

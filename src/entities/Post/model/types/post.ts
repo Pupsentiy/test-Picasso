@@ -6,6 +6,5 @@ export interface Post {
 }
 
 export interface PostSchema {
-  post: Post[];
   page: number;
 }

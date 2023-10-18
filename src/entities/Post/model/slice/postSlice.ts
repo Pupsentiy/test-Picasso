@@ -1,9 +1,8 @@
-import { Post, PostSchema } from "../types/post.ts";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { PostSchema } from "../types/post.ts";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: PostSchema = {
-  post: [],
-  page: 0,
+  page: 1,
 };
 
 export const postSlice = createSlice({
@@ -12,9 +11,6 @@ export const postSlice = createSlice({
   reducers: {
     setPage: (state) => {
       state.page += 1;
-    },
-    setPost: (state, action: PayloadAction<Post[]>) => {
-      state.post = [...state.post, ...action.payload];
     },
   },
 });

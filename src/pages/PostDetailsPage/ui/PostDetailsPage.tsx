@@ -9,7 +9,6 @@ interface PostDetailsPageProps {
 }
 const PostDetailsPage = ({ className }: PostDetailsPageProps) => {
   const { id } = useParams();
-  console.log(id);
   return (
     <Page className={cls([styles.PostDetailsPage, className])}>
       <PostDetails id={id} />
